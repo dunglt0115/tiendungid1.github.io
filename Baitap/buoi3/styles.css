@@ -1,13 +1,24 @@
-body
+@font-face
 {
-    background-color: #f590b2;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
 
+body
+{
+    background-color: #F48FB1;
+}
+
+/* CSS khung giữa */
 #bigbox
 {
     color: black;
     background-color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins';
     width: 400px;
     height: 500px;
     position: absolute;
@@ -16,14 +27,26 @@ body
     transform: translate(-50%, -50%);
     padding: 30px;
     border-radius: 5px;
-    box-shadow: 5px 5px 8px 2px gray;
+    box-shadow: 10px 10px 20px -10px gray;
 }
 
-p
+/* CSS content khung */
+ul
+{
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+ul li
 {
     display: flex;
     align-items: center;
     justify-content: left;
+}
+
+p
+{
+    display: inline;
 }
 
 #title-image
@@ -32,22 +55,38 @@ p
     height: 35px;
     object-fit: cover;
     margin-right: 5px;
+    float: left;
 }
 
-.border-image
+#title-text
+{
+    font-size: 30px;
+    text-transform: none;
+}
+
+.person-image
 {
     width: 52px;
     height: 52px;
     border-radius: 50%;
     margin-right: 10px;
     object-fit: cover;
+    float: left;
 }
 
-#title-text
+.name-text
 {
-    font-size: 25px;
+    font-stretch: ultra-expanded;
+    font-size: 22px;
 }
 
+.age-text
+{
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+/* CSS button */
 .button
 {
     color: white;
@@ -57,11 +96,13 @@ p
     height: 60px;
     margin-top: 15px;
     background-image: linear-gradient(to right, #c91564, #fa3c7e);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px -8px gray;
     transition: all 0.5s;
     cursor: pointer;
 }
 
-.button span 
+.button span
 {
     cursor: pointer;
     display: inline-block;
@@ -74,16 +115,15 @@ p
     content: '\00bb';
     position: absolute;
     opacity: 0;
-    top: 0;
     right: -20px;
     transition: 0.5s;
 }
-  
+
 .button:hover span
 {
     padding-right: 25px;
 }
-  
+
 .button:hover span:after
 {
     opacity: 1;
