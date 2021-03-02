@@ -1,0 +1,23 @@
+body
+    {
+        background-color: #c5c5c5;
+    }
+div
+    {
+        color: grey;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: solid white;
+        padding: 15px;
+        background-color: white;
+        box-shadow: 1px 1px 1px;
+    }
+#icon
+    {
+        color: #8cc249;
+        border: solid white;
+        padding: 3px;
+    }
+.time
+    {
+        color: #8cc249;
+    }
