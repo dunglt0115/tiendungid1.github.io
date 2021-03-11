@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    display: flex;
+    height: 700px;
+    width: 900px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #484B54;
+}
+
+/* CSS cho effect milo 1 */
+
+.milo {
+    position: relative;
+    left: 30%;
+    top: 30%;
+    height: 318px;
+    width: 414px;
+    cursor: pointer;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.milo .title1,
+.milo .title2 {
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    font-size: 26px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.milo .title1 {
+    left: 48%;
+    font-weight: lighter;
+}
+
+.milo .title2 {
+    left: 78%;
+    font-weight: bolder;
+}
+
+.milo .whitebox {
+    position: absolute;
+    opacity: 0;
+    right: 55%;
+    bottom: 70%;
+    height: 60px;
+    width: 207px;
+    border-right: 2px solid white;
+    transition: all 0.4s;
+}
+
+.milo .subtitle {
+    position: absolute;
+    right: 5%;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: white;
+    line-height: 1.2;
+    font-weight: lighter;
+    font-stretch: ultra-expanded;
+    text-align: right;
+}
+
+.milo .image {
+    position: absolute;
+    z-index: -5;
+    right: 0;
+    bottom: 0;
+    height: 340px;
+    width: 450px;
+    background-image: linear-gradient(0, rgba(98, 151, 116, 0), rgba(98, 151, 116, 0)),
+    url('/Baitap/buoi5/milo1.jpg');
+    background-size: cover;
+    transition: all 0.4s;
+}
+
+.milo:hover .whitebox {
+    opacity: 1;
+    right: 50%;
+    transition: all 0.4s;
+}
+
+.milo:hover .image {
+    width: 414px;
+    height: 318px;
+    background-image: linear-gradient(0, rgba(98, 151, 116, 0.5), rgba(98, 151, 116, 0.5)),
+    url('/Baitap/buoi5/milo1.jpg');
+    transition: all 0.4s;
+}
+
+/* CSS cho effect dexter 2 */
+
+.dexter {
+    position: relative;
+    left: 45%;
+    top: 30%;
+    height: 318px;
+    width: 414px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.dexter::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.dexter:hover:before {
+    height: 100%;
+}
+
+.dexter:hover .whitebox {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8%;
+    height: 130px;
+    width: 370px;
+    border: 7px solid white;
+    transition: all 0.5s;
+}
+
+.dexter:hover .whitebox .subtitle {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.dexter .title1,
+.dexter .title2 {
+    position: absolute;
+    top: 50px;
+    font-size: 26px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.dexter .title1 {
+    left: 48px;
+    font-weight: lighter;
+}
+
+.dexter .title2 {
+    left: 43%;
+    font-weight: bolder;
+}
+
+.dexter .whitebox {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 160px;
+    height: 130px;
+    width: 370px;
+    border: 7px solid white;
+    transition: all 0.5s;
+}
+
+.dexter .subtitle {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    bottom: 10%;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: white;
+    line-height: 1.4;
+    font-weight: lighter;
+    font-stretch: ultra-expanded;
+}
+
+.dexter .image {
+    height: 318px;
+    width: 414px;
+    object-fit: cover;
+}
