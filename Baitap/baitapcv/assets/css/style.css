@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #191923;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 16px;
+}
+
+/* LEFT CONTAINER
+
+Table of contents
+1. Avatar 
+2. Info
+3. Language
+4. Skill
+5. Knowledge
+6. Download
+7. Social
+
+*/
+
+.leftwrap {
+    background: #20202a;
+    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+    height: 200vh;
+}
+
+.leftwrap__avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 235px;
+    padding: 30px;
+}
+
+.leftwrap__avatar--image {
+    padding-bottom: 10px;
+}
+
+.leftwrap__avatar--image img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.leftwrap__avatar--blob {
+    position: relative;
+    z-index: 2;
+}
+
+.leftwrap__avatar--blob .blob--pulse {
+    position: absolute;
+    background-color: #ffc107;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    right: -40px;
+    bottom: 20px;
+    box-shadow: 0 0 0 0 rgba(140, 140, 142, 1);
+	animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(140, 140, 142, 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(140, 140, 142, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(140, 140, 142, 0);
+	}
+}
+
+.leftwrap__avatar--name {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.leftwrap__avatar--name:hover {
+    color: #ffc107;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.leftwrap__avatar--job {
+    color: white;
+    color: #8C8C8E;
+    font-size: 13px;
+}
+
+.leftwrap__info {
+    padding: 15px 30px;
+}
+
+.leftwrap__info ul li {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: white;
+}
+
+.leftwrap .leftwrap--whitespan {
+    font-size: 13px;
+}
+
+.leftwrap .leftwrap--coldspan {
+    color: #8C8C8E;
+}
+
+.leftwrap__divider {
+    background: #8c8c8e;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 82%;
+    height: 1px;
+    opacity: 0.3;
+}
+
+.leftwrap__language {
+    display: flex;
+    padding: 30px;
+}
+
+.leftwrap__language--pie1,
+.leftwrap__language--pie2,
+.leftwrap__language--pie3 {
+    display: flex;
+    justify-content: center;
+    width: 33.33333%;
+}
+
+.leftwrap__language--pie1 .circle,
+.leftwrap__language--pie2 .circle,
+.leftwrap__language--pie3 .circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    border: 3px solid #ffc107;
+    border-radius: 50%;
+}
+
+.leftwrap__language--pie1 .number,
+.leftwrap__language--pie2 .number,
+.leftwrap__language--pie3 .number {
+    position: absolute;
+    color: white;
+    width: 15px;
+    height: 15px;
+    counter-reset: num var(--num);
+}
+
+.leftwrap__language--pie1 .number {
+    animation: pie1 1.5s linear forwards;
+    left: 7%;
+    top: 24%;
+}
+
+.leftwrap__language--pie2 .number {
+    animation: pie2 1.5s linear forwards;
+    left: 12%;
+    top: 24%;
+}
+
+.leftwrap__language--pie3 .number {
+    animation: pie3 1.5s linear forwards;
+    left: 14%;
+    top: 24%;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.number::after {
+    content: counter(num);
+}
+  
+@keyframes pie1 {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: 100;
+    }
+}
+
+@keyframes pie2 {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: 90;
+    }
+}
+
+@keyframes pie3 {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: 70;
+    }
+}
+
+.leftwrap__skill {
+    padding: 30px 30px 10px;
+}
+
+.leftwrap__skill li {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: white;
+    animation: opacity 1.5s linear forwards;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+}
+
+.leftwrap__skill--bar {
+    height: 4px;
+    background-color: #ffc107;
+    margin-bottom: 20px;
+    width: var(--percent);
+    animation: growth 1.5s linear forwards;
+}
+
+@keyframes growth {
+    from {
+        opacity: 0;
+        width: calc(var(--percent) -30%);
+    }
+    to {
+        opacity: 1;
+        width: calc(var(--percent));
+    }
+}
+
+.leftwrap__know {
+    padding: 15px 30px;
+}
+
+.leftwrap__know li {
+    color: #8C8C8E;
+    list-style-type: none;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.leftwrap__know li i {
+    color: #ffc107;
+    font-size: 8px;
+    padding-right: 6px;
+}
+
+.leftwrap__download {
+    padding: 15px 30px;
+}
+
+.leftwrap__download a {
+    text-decoration: none;
+    color: #8C8C8E;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.leftwrap__download i {
+    color: #8C8C8E;
+    font-size: 10px;
+    padding-left: 2px;
+}
+
+.leftwrap__download a:hover {
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.leftwrap__social {
+    background-color: #242430;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftwrap__social a {
+    color: #8C8C8E;
+    font-size: 12px;
+}
+
+/* RIGHT CONTAINER 
+
+Table of contents
+1. Banner
+2. Achivements
+3. Services
+4. Price plans
+5. Testimonials
+6. Brands
+7. Footer
+
+*/
+
+.rightwrap {
+
+}
+
+.rightwrap__banner {
+
+}
+
+.rightwrap__achive {
+
+}
+
+.rightwrap__services {
+
+}
+
+.rightwrap__price {
+
+}
+
+.rightwrap__testimonials {
+
+}
+
+.rightwrap__brands {
+
+}
+
+.rightwrap__footer {
+
+}
