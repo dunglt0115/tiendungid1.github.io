@@ -10,7 +10,7 @@
 body {
     background-color: #191923;
     font-family: 'Poppins', sans-serif;
-    padding-top: 16px;
+    padding: 1em;
 }
 
 /* LEFT CONTAINER
@@ -28,26 +28,40 @@ Table of contents
 
 .leftwrap {
     background: #20202a;
-    box-shadow: 0 3px 8px 0 rgb(32 32 42);
-    height: 100vh;
+    box-shadow: 0 3px 0.5em 0 rgb(32 32 42);
+    position: fixed;
+    width: 24%;
+    height: calc(100vh - 6em);
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.leftwrap::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
 .leftwrap__avatar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
     text-align: center;
-    height: 235px;
-    padding: 30px;
+    height: 14.6875em;
+    width: 24%;
+    padding: 1.875em;
+    background-color: #24242f;
+    z-index: 100;
 }
 
 .leftwrap__avatar--image {
-    padding-bottom: 10px;
+    padding-bottom: 0.625em;
 }
 
 .leftwrap__avatar--image img {
-    width: 90px;
-    height: 90px;
+    width: 5.625em;
+    height: 5.625em;
     border-radius: 50%;
 }
 
@@ -59,11 +73,11 @@ Table of contents
 .leftwrap__avatar--blob .blob--pulse {
     position: absolute;
     background-color: #ffc107;
-    width: 15px;
-    height: 15px;
+    width: 0.9375em;
+    height: 0.9375em;
     border-radius: 50%;
-    right: -40px;
-    bottom: 20px;
+    right: -2.5em;
+    bottom: 1.25em;
     box-shadow: 0 0 0 0 rgba(140, 140, 142, 1);
 	animation: pulse 1s infinite;
 }
@@ -74,7 +88,7 @@ Table of contents
 	}
 
 	70% {
-		box-shadow: 0 0 0 10px rgba(140, 140, 142, 0);
+		box-shadow: 0 0 0 0.625em rgba(140, 140, 142, 0);
 	}
 
 	100% {
@@ -84,9 +98,9 @@ Table of contents
 
 .leftwrap__avatar--name {
     color: white;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
     transition: 0.5s;
 }
 
@@ -99,11 +113,12 @@ Table of contents
 .leftwrap__avatar--job {
     color: white;
     color: #8C8C8E;
-    font-size: 13px;
+    font-size: 0.8125em;
 }
 
 .leftwrap__info {
-    padding: 15px 30px;
+    padding: 0.9375em 1.875em;
+    margin-top: 14.6875em;
 }
 
 .leftwrap__info ul li {
@@ -114,11 +129,12 @@ Table of contents
 }
 
 .leftwrap .leftwrap--whitespan {
-    font-size: 13px;
+    font-size: 0.8125em;
 }
 
 .leftwrap .leftwrap--coldspan {
     color: #8C8C8E;
+    font-size: 0.8125em;
 }
 
 .leftwrap__divider {
@@ -133,7 +149,7 @@ Table of contents
 
 .leftwrap__language {
     display: flex;
-    padding: 30px;
+    padding: 1.875em;
 }
 
 .leftwrap__language--pie1,
@@ -148,8 +164,8 @@ Table of contents
 .leftwrap__language--pie2 .circle,
 .leftwrap__language--pie3 .circle {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 3.125em;
+    height: 3.125em;
     background-color: none;
     border: 3px solid #ffc107;
     border-radius: 50%;
@@ -160,8 +176,8 @@ Table of contents
 .leftwrap__language--pie3 .number {
     position: absolute;
     color: #cacace;
-    width: 15px;
-    height: 15px;
+    width: 0.9375em;
+    height: 0.9375em;
     counter-reset: num var(--num);
 }
 
@@ -221,7 +237,7 @@ Table of contents
 }
 
 .leftwrap__skill {
-    padding: 30px 30px 10px;
+    padding: 1.875em 1.875em 0.625em;
 }
 
 .leftwrap__skill li {
@@ -242,9 +258,9 @@ Table of contents
 }
 
 .leftwrap__skill--bar {
-    height: 4px;
+    height: 0.25em;
     background-color: #ffc107;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
     width: var(--percent);
     animation: growth 1.5s linear forwards;
 }
@@ -261,30 +277,30 @@ Table of contents
 }
 
 .leftwrap__know {
-    padding: 15px 30px;
+    padding: 0.9375em 1.875em;
 }
 
 .leftwrap__know li {
     color: #8C8C8E;
     list-style-type: none;
-    font-size: 15px;
+    font-size: 0.9375em;
     font-weight: 300;
 }
 
 .leftwrap__know li i {
     color: #ffc107;
-    font-size: 8px;
+    font-size: 0.5em;
     padding-right: 6px;
 }
 
 .leftwrap__download {
-    padding: 15px 30px;
+    padding: 0.9375em 1.875em;
 }
 
 .leftwrap__download a {
     text-decoration: none;
     color: #8C8C8E;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
     text-transform: uppercase;
     transition: 0.5s;
@@ -292,7 +308,7 @@ Table of contents
 
 .leftwrap__download i {
     color: #8C8C8E;
-    font-size: 10px;
+    font-size: 0.625em;
     padding-left: 2px;
 }
 
@@ -304,9 +320,12 @@ Table of contents
 
 .leftwrap__social {
     background-color: #242430;
-    padding: 20px 30px;
+    padding: 1.25em 1.875em;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    bottom: 0.625em;
+    width: 24%;
 }
 
 .leftwrap__social a {
@@ -329,13 +348,13 @@ Table of contents
 
 .rightwrap {
     background-color: #1e1e28;
-    height: 500vh;
+    height: 100%;
 }
 
 .rightwrap__banner {
     position: relative;
     width: 100%;
-    height: 393px;
+    height: 25em;
     background-image: linear-gradient(0, rgba(32, 32, 42, 0.9), rgba(32, 32, 42, 0.9)),
     url('/Baitap/baitapcv/assets/images/bg.jpg');
     background-size: cover;
@@ -349,8 +368,8 @@ Table of contents
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
-    height: 30px;
-    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+    height: 1.875em;
+    box-shadow: 0 3px 0.5em 0 rgb(15 15 20 / 20%);
     background-color: rgba(30, 30, 40, 0.9);
     z-index: 10;
 }
@@ -467,60 +486,70 @@ Table of contents
 }
 
 .rightwrap__achive {
-    list-style-type: none;
+    margin-bottom: 1.6em;
+}
+
+.rightwrap__achive--container {
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
+}
+
+.rightwrap__achive--container .block {
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .rightwrap__achive--number {
     color: #ffc107;
-    font-size: 24px;
+    font-size: 1.375em;
     font-weight: 600;
+    margin: 0 6px;
 }
 
 .rightwrap__achive--text {
     color: white;
-    font-size: 14px;
+    font-size: 0.875em;
+    margin: 0 6px;
 }
 
 .rightwrap__services {
-    padding: 1.6em 1.6em 0;
+    padding: 0 1.6em 1em;
 }
 
 .rightwrap__services--heading {
     position: relative;
     color: white;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 600;
 }
 
 .rightwrap__services--container {
+    margin-top: 1.25em;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
 }
 
 .rightwrap__services--block {
-    width: calc(90%/3);
-    height: 230px;
-    margin: 12px 0;
+    width: 100%;
+    height: auto;
+    margin: 0.875em 0;
     background-color: #2c2c37;
-    padding: 30px;
+    padding: 1.875em;
 }
 
 .rightwrap__services--block span {
     color: white;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
 }
 
 .rightwrap__services--block p {
     color: #8c8c8e;
-    font-size: 14px;
+    font-size: 0.875em;
     line-height: 1.6;
-    margin: 10px 0;
+    margin: 0.625em 0;
 }
 
 .rightwrap__services--block a {
@@ -538,22 +567,21 @@ Table of contents
 .rightwrap__price--heading {
     position: relative;
     color: white;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 600;
 }
 
 .rightwrap__price--container {
     display: flex;
-    margin-top: 30px;
+    margin-top: 1.875em;
     justify-content: space-evenly;
 }
 
 .rightwrap__price--block {
-    width: calc(90%/3);
-    height: 370px;
-    margin: 0 12px;
+    width: 100%;
+    height: 100%;
     background-color: #2c2c37;
-    padding: 30px;
+    padding: 1.875em;
 }
 
 .rightwrap__price--block {
@@ -565,7 +593,7 @@ Table of contents
 
 .rightwrap__price--blocktitle {
     color: white;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
 }
 
@@ -575,15 +603,15 @@ Table of contents
 }
 
 .rightwrap__price--block .block--span1 {
-    font-size: 13px;
+    font-size: 0.8125em;
     font-weight: 200;
 }
 
 .rightwrap__price--block .block--span2 {
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 600;
     color: #ffc107;
-    margin: 10px;
+    margin: 0.625em;
     text-transform: uppercase;
 }
 
@@ -593,8 +621,8 @@ Table of contents
 }
 
 .rightwrap__price--block ul li {
-    margin-bottom: 10px;
-    font-size: 13px;
+    margin-bottom: 0.625em;
+    font-size: 0.8125em;
 }
 
 .rightwrap__price--block ul li i {
@@ -612,7 +640,7 @@ Table of contents
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 1.25em;
     margin-bottom: 5px;
     cursor: pointer;
 }
@@ -629,7 +657,7 @@ Table of contents
 .rightwrap__brands--heading {
     position: relative;
     color: white;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 600;
 }
 
@@ -639,7 +667,7 @@ Table of contents
 }
 
 .rightwrap__brands img {
-    width: 120px;
+    width: 11.25em;
     opacity: 0.6;
     transition: 0.5s;
 }
@@ -652,9 +680,9 @@ Table of contents
 .rightwrap__footer {
     margin: 0 auto;
     width: 95%;
-    height: 50px;
+    height: 3.125em;
     background-color: #2c2c37;
-    padding: 15px 30px;
+    padding: 0.9375em 1.875em;
     display: flex;
     justify-content: space-between;
 }
@@ -662,4 +690,22 @@ Table of contents
 .rightwrap__footer div {
     color: #8c8c8e;
     font-size: 12px;
+}
+
+@media (max-width: 991px) {
+    .leftwrap {
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 1200px) {
+    .rightwrap__banner--portrait {
+        display: none;
+    }
 }
