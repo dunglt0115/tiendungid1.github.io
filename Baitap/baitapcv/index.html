@@ -10,6 +10,9 @@
     <title>Bài tập CV</title>
 </head>
 <body>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
     <div class="grid wide">
         <div class="row">
 
@@ -413,5 +416,14 @@
                 </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        progress = document.getElementById('progressbar');
+        totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function() {
+            progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
 </body>
 </html>
