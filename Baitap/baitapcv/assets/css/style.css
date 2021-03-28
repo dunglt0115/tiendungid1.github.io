@@ -32,7 +32,7 @@ Table of contents
     box-shadow: 0 3px 0.5em 0 rgb(32 32 42);
     position: fixed;
     width: 24%;
-    height: calc(100vh - 6em);
+    height: calc(100vh - 5em);
     overflow: scroll;
     z-index: 10;
 }
@@ -300,22 +300,15 @@ Table of contents
 .leftwrap__download a {
     text-decoration: none;
     color: #8C8C8E;
-    font-size: 0.875em;
+    font-size: 1.25em;
     font-weight: 600;
     text-transform: uppercase;
-    transition: 0.5s;
-}
-
-.leftwrap__download i {
-    color: #8C8C8E;
-    font-size: 0.625em;
-    padding-left: 2px;
+    transition: all 0.5s;
 }
 
 .leftwrap__download a:hover {
     color: white;
     cursor: pointer;
-    transition: 0.5s;
 }
 
 .leftwrap__social {
@@ -342,14 +335,6 @@ Table of contents
     margin-bottom: 15px;
 }
 
-.leftwrap__dot--btnclosed {
-    width: 28px;
-    height: 28px;
-    color: #8C8C8E;
-    /* display: block; */
-    position: relative;
-}
-
 .leftwrap__dot--overlay {
     position: fixed;
     top: 0;
@@ -358,6 +343,21 @@ Table of contents
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 10000;
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.leftwrap__input:checked ~ .leftwrap__dot--overlay {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* RIGHT CONTAINER 
@@ -512,12 +512,12 @@ Table of contents
 
 .rightwrap__achive {
     margin-bottom: 1.6em;
+    padding: 0 1.6em;
 }
 
 .rightwrap__achive--container {
-    display: flex;
-    justify-content: space-evenly;
     width: 100%;
+    
 }
 
 .rightwrap__achive--container .block {
@@ -562,6 +562,11 @@ Table of contents
     margin: 0.875em 0;
     background-color: #2c2c37;
     padding: 1.875em;
+    transition: all 0.3s;
+}
+
+.rightwrap__services--block:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .rightwrap__services--block span {
@@ -608,6 +613,7 @@ Table of contents
     background-color: #2c2c37;
     padding: 1.875em;
     margin: 0.875em 0;
+    transition: all 0.3s;
 }
 
 .rightwrap__price--block {
@@ -615,6 +621,10 @@ Table of contents
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.rightwrap__price--block:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .rightwrap__price--blocktitle {
@@ -740,15 +750,15 @@ Table of contents
 /* Medium devices */
 @media (max-width: 991px) {
     .leftwrap {
-        display: none;
-        /* z-index: 100000;
+        z-index: 100000;
         width: 35%;
         height: calc(100vh - 3em);
         top: 0;
-        left: 0; */
+        left: -50%;
+        transition: left linear 0.35s;
     }
 
-    /* .leftwrap__avatar {
+    .leftwrap__avatar {
         z-index: 100000;
         width: 35%;
     }
@@ -756,10 +766,50 @@ Table of contents
     .leftwrap__social {
         bottom: 0;
         width: 35%;
-    } */
+    }
 
     .leftwrap__dot--btn {
         display: block;
+    }
+
+    .leftwrap__input:checked ~ .leftwrap {
+        left: 0;
+    }
+}
+
+@media (max-width: 690px) {
+    .leftwrap {
+        left: -70%;
+        width: 50%;
+    }
+
+    .leftwrap__avatar {
+        width: 50%;
+    }
+
+    .leftwrap__social {
+        width: 50%;
+    }
+}
+
+@media (max-width: 485px) {
+    .leftwrap {
+        width: 70%;
+        left: -70%;
+    }
+
+    .leftwrap__avatar {
+        width: 70%;
+    }
+
+    .leftwrap__social {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .leftwrap__dot--btn {
+        margin-top: 16px;
     }
 }
 
