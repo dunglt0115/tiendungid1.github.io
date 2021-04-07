@@ -782,6 +782,13 @@ Table of contents
     font-size: 12px;
 }
 
+@media (max-width: 425px) {
+    .rightwrap__footer {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
 /* Extra small devices */
 @media (max-width: 576px) {
     .rightwrap__banner--text > span {
