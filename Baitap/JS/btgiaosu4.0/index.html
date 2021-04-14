@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Form Validation</title>
+</head>
+<body>
+    <div class="grid wide">
+        <h1 class="heading">Bài tập JS cơ bản</h1>
+
+        <div class="container">
+            <div class="form--container">
+                <div class="name--group">
+                    <label class="name--label" for="name--item">Nhập bí danh:</label>
+                    <input id="name--item" name="array[]" type="text" placeholder="VD: Giáo sư 4.0">
+                    <span class="name__error--message"></span>
+                </div>
+
+                <div class="cate--group">
+                    <label class="cate--label" for="cate-item">Chọn Class:</label>
+                    <select name="array[]" id="cate-item">
+                        <option value="">None</option>
+                        <option value="Tiên">Tiên</option>
+                        <option value="Thần">Thần</option>
+                        <option value="Ma">Ma</option>
+                        <option value="Quỷ">Quỷ</option>
+                        <option value="Yêu">Yêu</option>
+                        <option value="Linh">Linh</option>
+                        <option value="Nhân">Nhân</option>
+                    </select>
+                    <span class="cate__error--message"></span>
+                </div>
+
+                <div class="upload--group">
+                    <input id="image--item" onchange="loadFile(event)" name="image--item" style="display: none;" type="file">
+                    <p><label for="image--item" style="cursor: pointer;">Upload Avatar</label></p>
+                    <p><img id="preview--image" width="200" height="50" /></p>
+                </div>
+
+                <div class="submit--group">
+                    <button type="submit" class="submit--btn" id="submit--item">Đăng ký</button>
+                </div>
+            </div>
+
+            <div class="data--container">
+                <div class="data--header">
+                    <div class="order--column">
+                        <span>#</span>
+                        <ul id="result--order"></ul>
+                    </div>
+        
+                    <div class="itemname--column">
+                        <span>Bí danh</span>
+                        <ul id="result--name"></ul>
+                    </div>
+        
+                    <div class="category--column">
+                        <span>Class</span>
+                        <ul id="result--cate"></ul>
+                    </div>
+        
+                    <div class="image--column">
+                        <span>Avatar</span>
+                        <div id="result--image"></div>
+                    </div>
+        
+                    <div class="action--column">
+                        <span>Action</span>
+                        <div id="action--button"></div>
+                    </div>
+                </div>
+
+                <div class="data-result">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

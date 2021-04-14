@@ -2,9 +2,9 @@
 
 function showDateAndTime()
 {
-    const btn = new Date();
-    const date = btn.toDateString();
-    const time = btn.toTimeString();
+    const date = new Date().toLocaleDateString();
+    const time = new Date().toLocaleTimeString();
+    
     document.getElementById('bt1--date').innerHTML = date;
     document.getElementById('bt1--time').innerHTML = time;
 }
@@ -49,7 +49,13 @@ function showDateWithFormats()
 // Bài tập 3: Kiểm tra một số nguyên đã cho có chuỗi chữ số tăng hay không
 function increasingDigits()
 {
-    let num = Number(prompt('Nhập 1 số nguyên'));
+    let num = document.getElementById("bt3input").value;
+
+    if (typeof num != "number")
+    {
+        return document.getElementById('bt3').innerHTML = false;
+    }
+
     let interFunc = value => Number(value);
     let arrFromNumber = Array.from(String(num), interFunc);
     let result = true;
@@ -66,7 +72,13 @@ function increasingDigits()
 // Bài tập 4: Thay thế mọi ký tự trong một chuỗi đã cho với ký tự theo sau nó trong bảng chữ cái
 function alphabetAfter()
 {
-    let str = String(prompt('Nhập 1 chuỗi ký tự'));
+    let str = document.getElementById("bt4input").value;
+
+    if (typeof str !== "string")
+    {
+        return document.getElementById('bt4').innerHTML = false;
+    }
+
     let chars = str.split('');
 
     for (let i = 0; i < chars.length; i++)
@@ -76,7 +88,9 @@ function alphabetAfter()
         chars[i] = String.fromCharCode(n + 'a'.charCodeAt());
     }
 
-    return document.getElementById('bt4').innerHTML = chars.join('');
+    let join = chars.join('');
+
+    return document.getElementById('bt4').innerHTML = join;
 }
 
 // Bài tập 5: Viết chương trình để tạo chuỗi bằng cách sử dụng ba ký tự ở giữa của một chuỗi có độ dài lẻ
@@ -99,7 +113,7 @@ function threeCharsMiddle()
     return document.getElementById('bt5').innerHTML = mid;
 }
 
-// Viết chương trình hiển thị số xuất hiện nhiều lần nhất trong mảng
+// Bài tập 6: Viết chương trình hiển thị số xuất hiện nhiều lần nhất trong mảng
 function numberManyTimes ()
 {
     let num = Number(prompt('Nhập 1 số'));
@@ -254,7 +268,7 @@ function findPrimeNumbers()
 
         if (i > 1 && prime == 0)
         {
-            console.log (i);
+            document.getElementById('bt10').innerHTML = 000;
         }
     }
 }
