@@ -9,7 +9,8 @@ body {
     padding-top: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #314e52;
-
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .heading {
@@ -75,7 +76,3 @@ body {
 .order--column {
     width: 20%;
 }
-
-/* .data-result {
-    display: block;
-} */
