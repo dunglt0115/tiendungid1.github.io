@@ -9,7 +9,9 @@ let cateArr = ["-- Chọn pet --", "Mèo", "Chó", "Gà"];
 let imagePreview = document.getElementById("preview--image");
 
 // Validate & Preview ảnh
-
+let loadFile = function(event) {
+    imagePreview.src = URL.createObjectURL(event.target.files[0]);
+}
 
 submitButton.addEventListener("click", function() {
     let numbers = /^[0-9]+$/;
