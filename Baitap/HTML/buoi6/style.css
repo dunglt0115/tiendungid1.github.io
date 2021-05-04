@@ -1,0 +1,123 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(110, 110, 110);
+    display: flex;
+    justify-content: space-around;
+}
+
+.container1 {
+    display: flex;
+}
+
+.rectangle1,
+.rectangle2,
+.rectangle3,
+.rectangle4,
+.rectangle5 {
+    background-color: white;
+    width: 15px;
+    height: 80px;
+    margin: 0 2px;
+    animation: scale 1.5s infinite;
+}
+
+.rectangle2 {
+    animation-delay: 0.1s;
+}
+
+.rectangle3 {
+    animation-delay: 0.2s;
+}
+
+.rectangle4 {
+    animation-delay: 0.3s;
+}
+
+.rectangle5 {
+    animation-delay: 0.4s;
+}
+
+@keyframes scale {
+    0% {transform: scaleY(1);}
+    50% {transform: scaleY(0.4);}
+    100% {transform: scaleY(0.4);}
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.row1,
+.row2,
+.row3 {
+    display: flex;
+}
+
+.column {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    background-color: white;
+}
+
+.c11,
+.c12,
+.c13,
+.c21,
+.c22,
+.c23,
+.c31,
+.c32,
+.c33 {
+    animation: minimize 2s infinite;
+}
+
+.c31 {
+    animation-delay: 0.1s;
+}
+
+.c32, .c21 {
+    animation-delay: 0.2s;
+}
+
+.c33, .c22, .c11 {
+    animation-delay: 0.3s;
+}
+
+.c12, .c23 {
+    animation-delay: 0.4s;
+}
+
+.c13 {
+    animation-delay: 0.5s;
+}
+
+@keyframes minimize {
+    0% {transform: scale(1);}
+    25% {transform: scale(0);}
+    50% {transform: scale(1);}
+    75% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+.container3 {
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    animation: rotate 1.5s infinite;
+    transform: perspective(100px);
+}
+
+@keyframes rotate {
+    /* 0% {transform: rotate3d(0);} */
+    50% {
+        transform: perspective(100);
+        transform: rotate3d(0, 1, 0, -180deg);
+    }
+    100% {
+        transform: perspective(200); 
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+}

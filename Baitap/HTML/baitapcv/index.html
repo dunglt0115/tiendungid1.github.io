@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/scss/gridtest.css">
+    <link rel="stylesheet" href="./assets/scss/styletest.css">
     <title>Bài tập CV</title>
 </head>
 <body>
-    <div id="progressbar"></div>
-    <div id="scrollPath"></div>
-
     <div class="grid wide">
         <div class="row">
             <!-- LEFT CONTAINER -->
@@ -146,7 +143,6 @@
                             <a href="https://github.com/"><i class="fab fa-github"></i></a>
                             <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                     </div>
-
                 </div>
 
                 <label for="leftwrap__open" class="leftwrap__dot--btn">
@@ -158,11 +154,10 @@
 
             <!-- RIGHT CONTAINER -->
             <div class="col l-9 c-12">
-                <div class="rightwrap">
-                    
+                <div class="rightwrap">                  
                     <div class="rightwrap__banner">
                         <div class="rightwrap__banner--blackbar"></div>
-                        <img src="/Baitap/baitapcv/assets/images/bg.jpg" class="rightwrap__banner--bg">
+                        <img src="./assets/images/bg.jpg" class="rightwrap__banner--bg">
                         <div class="rightwrap__banner--overlay">
                             <div class="rightwrap__banner--text">
                                 <span>Discover my Amazing
@@ -174,7 +169,7 @@
                                     <a href="#">Explore now</a>
                                 </div>
                             </div>
-                            <img src="/Baitap/baitapcv/assets/images/face-2-min.png" class="rightwrap__banner--portrait"></img>
+                            <img src="./assets/images/face-2-min.png" class="rightwrap__banner--portrait"></img>
                         </div>
                     </div>
 
@@ -408,18 +403,9 @@
                             <span>Email: admin@bslthemes.com</span>
                         </div>
                     </div>
-
                 </div>
+            </div>
         </div>
     </div>
-
-    <script type="text/javascript">
-        progress = document.getElementById('progressbar');
-        totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = function() {
-            progressHeight = (window.pageYOffset / totalHeight) * 100;
-            progress.style.height = progressHeight + "%";
-        }
-    </script>
 </body>
 </html>

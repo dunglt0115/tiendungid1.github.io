@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0; }
+
+.grid.wide {
+  max-width: 100%;
+  margin: 0 auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px; }
+
+.row.no-gutters {
+  margin-left: 0;
+  margin-right: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  padding: 1em;
+  background-color: #191923;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; }
+
+/* ----- for the left ----- */
+/* ----- for the right ----- */
+.leftwrap {
+  /* ------- Generic style ------- */
+  position: fixed;
+  width: 24%;
+  height: calc(100vh - 5em);
+  overflow: scroll;
+  z-index: 10;
+  background: #20202a;
+  box-shadow: 0 0.1875em 0.5em 0 #202020;
+  /* ------- Avatar ------- */
+  /* ------- Info ------- */
+  /* ------- Language ------- */
+  /* ------- Skill ------- */
+  /* ------- Knowledge ------- */
+  /* ------- Download ------- */
+  /* ------- Social ------- */ }
+  .leftwrap::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; }
+  .leftwrap__avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    height: 14.6875em;
+    width: 24%;
+    padding: 1.875em;
+    text-align: center;
+    background-color: #24242f; }
+    .leftwrap__avatar--image {
+      padding-bottom: 0.625em; }
+      .leftwrap__avatar--image img {
+        width: 5.625em;
+        height: 5.625em;
+        border-radius: 50%; }
